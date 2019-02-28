@@ -22,9 +22,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/logout', 'Api\LogoutController@index');
     Route::post('/find/ip', 'Api\AddressController@index');
     Route::post('/find/url', 'Api\AddressController@url');
-    Route::post('/url', 'Api\AddressController@url');
-    Route::get('/list', 'Api\AddressController@myList');
-    Route::delete('/address/{id}', 'Api\AddressController@remove')->where(['id' => '\d+']);
-    Route::post('/address', 'Api\AddressController@add');
+    Route::get('/addresses', 'Api\AddressController@myList');
+    Route::delete('/addresses/{id}', 'Api\AddressController@remove')->where(['id' => '\d+']);
+    Route::post('/addresses', 'Api\AddressController@add');
 });
 
