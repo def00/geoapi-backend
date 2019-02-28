@@ -15,7 +15,6 @@ use Illuminate\Http\Request;
 
 Route::post('/register', 'Api\RegisterController@index');
 Route::post('/login', 'Api\LoginController@index');
-Route::post('/domain', 'Api\AddressController@index');
 
 // check if request has a valid jwt token
 Route::middleware('auth:api')->group(function () {
