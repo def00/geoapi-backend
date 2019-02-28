@@ -7,6 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateUsersTable extends Migration
 {
     /**
+     * mysql://ba75d880b4c583:128b705f@eu-cdbr-west-02.cleardb.net/heroku_8e8989d301a8d65?reconnect=true
      * Run the migrations.
      *
      * @return void
