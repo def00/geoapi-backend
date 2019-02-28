@@ -106,7 +106,7 @@ class AddressController extends Controller
      * @param int $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function edit(AddressRecord $request, int $id)
+    public function edit(int $id, AddressRecord $request)
     {
         if (! $request->validate()) {
             return response()->json(['error' => $request->errors()], 401);
