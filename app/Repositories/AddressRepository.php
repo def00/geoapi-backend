@@ -16,6 +16,15 @@ class AddressRepository
         return $address;
     }
 
+    public function editAddress(int $userId, int $id, array $geoInfo)
+    {
+        $address = Address::where('user_id', $userId)->where('id', $id)->first();
+        $address->fill($geoInfo);
+        $address->save();
+
+        return $address;
+    }
+
     public function usersRecords(int $userId)
     {
         return Address::where('user_id', $userId)->get();

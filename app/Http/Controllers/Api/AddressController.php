@@ -100,4 +100,21 @@ class AddressController extends Controller
 
         return response()->json($address);
     }
+
+    /**
+     * @param AddressRecord $request
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function edit(AddressRecord $request, int $id)
+    {
+        if (! $request->validate()) {
+            return response()->json(['error' => $request->errors()], 401);
+        }
+
+        $repository = new AddressRepository();
+        $address = $repository->editAddress($request->user()->id, $id, $request->all());
+
+        return response()->json($address);
+    }
 }

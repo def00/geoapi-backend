@@ -24,6 +24,7 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/find/url', 'Api\AddressController@url');
     Route::get('/addresses', 'Api\AddressController@myList');
     Route::delete('/addresses/{id}', 'Api\AddressController@remove')->where(['id' => '\d+']);
+    Route::put('/addresses/{id}', 'Api\AddressController@edit')->where(['id' => '\d+']);
     Route::post('/addresses', 'Api\AddressController@add');
 });
 
